@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TabSwitch</title>
+    <style>
+
+    .tabs > span {
+        border: 1px solid black;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    .tabs > span:hover {
+        background-color: black;
+        color: white;
+    }
+    section {
+        margin-top: 2rem;
+        position: relative;
+    }
+    section > div {
+        border: 2px solid black;
+        color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    section > div:nth-child(1) {
+        background-color: red;
+        height: 250px;
+        position: absolute;
+        width: 100%;
+        transition: all 0.3s;
+        /* to intial colr */
+        /* display: none; */
+        /* opacity: 1; */
+    }
+    section > div:nth-child(2) {
+        background-color: blue;
+        height: 250px;
+        position: absolute;
+        width: 100%;
+        display: none;
+        transition: all 0.3s;
+        /* opacity: 0; */
+    }
+    section > div:nth-child(3) {
+        background-color: green;
+        height: 250px;
+        position: absolute;
+        width: 100%;
+        display: none;
+        transition: all 0.3s;
+        /* opacity: 0; */
+    }
+    .active-tab{
+        background-color: black;
+        color: white;
+    }
+</style>
+</head>
+<body>
+<div class="tabs">
+    <span onclick="tabSwitch(0)" class="active-tab">Home</span>
+    <span onclick="tabSwitch(1)">About</span>
+    <span onclick="tabSwitch(2)">Contact</span>
+</div>
+
+<section>
+    <div>Home</div>
+    <div>About</div>
+    <div>Contact</div>
+</section>
+
+<script>
+function tabSwitch(tabindex) {
+    const content = document.querySelectorAll("section>div");
+    const tabs = document.querySelectorAll(".tabs > span");
+
+    tabs.forEach((tab, i) => {
+        if (tabindex === i) {
+            tab.classList.add("active-tab");
+        } else {
+            tab.classList.remove("active-tab");
+        }
+    });
+
+    content.forEach((ele, i) => {
+        // ele.style.opacity = tabindex === i ? "1" : "0";
+        console.log("tabindex", tabindex, "i", i);
+        if (tabindex === i) {
+            ele.style.display = "block";
+        } else {
+            ele.style.display = "none";
+        }
+        // ele.style.display = tabindex === i ? "block" : "none";
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TabSwitch</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      background-color: rgba(48, 48, 48, 0.348);
+    }
+    ul {
+      display: flex;
+      gap: 20px;
+    }
+    ul li {
+      list-style: none;
+      font-size: 22px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    ul li:active {
+      color: red;
+      /* background-color: black; */
+    }
+    #contnt {
+      padding: 30px;
+      font-size: 20px;
+    }
+    .red{
+      font-size: 22px;
+      font-weight: 600;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li onclick="homeBtn()">Home</li>
+      <li onclick="aboutDiv()">About</li>
+      <li onclick="serviceDiv()">Service</li>
+      <li onclick="contactDiv()">Contact</li>
+    </ul>
+  </nav>
+
+
+  <div id="contnt"></div>
+
+  <script>
+    const contnt = document.getElementById("contnt");
+    // let c=1;
+
+    function homeBtn() {
+      let c=1;
+      if(c===1){
+     document.querySelectorAll("ul li")[0].classList.add("red")
+     document.querySelectorAll("ul li")[0].classList.remove("red")
+
+      }
+      contnt.innerHTML = `<p><b>Home:</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta soluta quibusdam autem temporibus ea voluptas ipsum inventore ducimus libero incidunt asperiores eius aut, labore, voluptate dolores, similique quia porro amet.</p>`;
+    }
+
+    
+
+    function aboutDiv() {
+      let c=2;
+       if(c===2){
+     document.querySelectorAll("ul li")[1].classList.add("red")
+     document.querySelectorAll("ul li")[1].classList.remove("red")
+      }
+      contnt.innerHTML = `<p><b>About:</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta soluta quibusdam autem temporibus ea voluptas ipsum inventore ducimus libero incidunt asperiores eius aut, labore, voluptate dolores, similique quia porro amet.</p>`;
+    }
+
+    function serviceDiv() {
+      let c=3;
+        if(c===3){
+     document.querySelectorAll("ul li")[2].classList.add("red")
+     document.querySelectorAll("ul li")[2].classList.remove("red")
+      }
+      contnt.innerHTML = `<p><b>Service:</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta soluta quibusdam autem temporibus ea voluptas ipsum inventore ducimus libero incidunt asperiores eius aut, labore, voluptate dolores, similique quia porro amet.</p>`;
+    }
+
+    function contactDiv() {
+      let c=4;
+        if(c===4){
+     document.querySelectorAll("ul li")[3].classList.add("red")
+     document.querySelectorAll("ul li")[3].classList.remove("red")
+      }
+      contnt.innerHTML = `<p><b>Contact:</b> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta soluta quibusdam autem temporibus ea voluptas ipsum inventore ducimus libero incidunt asperiores eius aut, labore, voluptate dolores, similique quia porro amet.</p>`;
+    }
+  </script>
+
+
+</body>
+</html>
